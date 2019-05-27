@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ionic JavaScript Starter</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+  <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+  <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+  
+</head>
+
+<body>
+<ion-router>
+	<ion-route url="/" component="app-root"></ion-route>
+	<ion-route component="app-tabs">
+		<ion-route url="/tabs/schedule" component="tab-schedule"></ion-route>
+	</ion-route>
+</ion-router>
+
+<ion-app>
+
+<ion-split-pane content-id="menu-content">
+<ion-menu side="start" content-id="menu-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Custom Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+      	<ion-menu-toggle>
+          <ion-item href="/">Pagina inicio</ion-item>
+	        <ion-item href="/tabs/schedule">Pagina Tabs</ion-item>
+	        <ion-item>Menu Item</ion-item>
+	        <ion-item>Menu Item</ion-item>
+	        <ion-item>Menu Item</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav id="menu-content"></ion-nav>
+</ion-split-pane>
+
+</ion-app>
+<ion-menu-controller></ion-menu-controller>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
